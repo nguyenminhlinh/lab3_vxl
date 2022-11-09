@@ -1,0 +1,25 @@
+/*
+ * display.h
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+
+#ifndef INC_DISPLAY_H_
+#define INC_DISPLAY_H_
+#include"global.h"
+/*void updateClockBuffer();
+void reset();
+void display7SEG(int );
+void update7SEG(int);
+void print_4led7SEG();*/
+#define EN0	0
+#define EN1	1
+void reset1();
+void reset2();
+void display7SEG1();
+void display7SEG2();
+
+void display_7SEG_automatic();
+void display_7SEG_modify();
+#endif /* INC_DISPLAY_H_ */

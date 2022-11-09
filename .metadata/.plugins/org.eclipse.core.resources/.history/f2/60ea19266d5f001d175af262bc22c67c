@@ -1,0 +1,17 @@
+/*
+ * fsm_automatic.h
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+
+#ifndef INC_FSM_AUTOMATIC_H_
+#define INC_FSM_AUTOMATIC_H_
+#include"global.h"
+int status1 ;
+int status2 ;
+int timer_red ;
+int timer_yellow ;
+int timer_green ;
+void fsm_automatic_run();
+#endif /* INC_FSM_AUTOMATIC_H_ */

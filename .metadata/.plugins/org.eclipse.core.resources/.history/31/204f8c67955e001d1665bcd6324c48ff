@@ -1,0 +1,14 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+#include"global.h"
+int count;
+int status1;
+int status2;
+int timer_red = 5000;
+int timer_yellow = 2000;
+int timer_green = 3000;
+

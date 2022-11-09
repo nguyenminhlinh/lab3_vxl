@@ -1,0 +1,22 @@
+/*
+ * software_timer.h
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+
+#ifndef INC_SOFTWARE_TIMER_H_
+#define INC_SOFTWARE_TIMER_H_
+
+extern int timer1_flag;
+extern int timer2_flag ;
+extern int timer3_flag ;
+extern int timer4_flag ;
+extern int timer5_flag ;
+int TICK;
+void setTimer1(int );
+void setTimer2(int );
+void setTimer3(int );
+void setTimer4(int );
+void timerRun();
+#endif /* INC_SOFTWARE_TIMER_H_ */

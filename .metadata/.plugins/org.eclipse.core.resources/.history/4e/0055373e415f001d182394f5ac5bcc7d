@@ -1,0 +1,115 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+
+#include "fsm_automatic.h"
+
+	void fsm_automatic_run(){
+		switch(status1){
+		case INIT:
+			HAL_GPIO_WritePin(R1_GPIO_Port,R1_Pin,1);
+			HAL_GPIO_WritePin(Y1_GPIO_Port,Y1_Pin,1);
+			HAL_GPIO_WritePin(G1_GPIO_Port,G1_Pin,1);
+			status1 = AUTO_RED;
+			setTimer1(timer_red);
+			countdown1=5;
+
+			break;
+		case AUTO_RED:
+			HAL_GPIO_WritePin(R1_GPIO_Port,R1_Pin,0);
+			HAL_GPIO_WritePin(Y1_GPIO_Port,Y1_Pin,1);
+			HAL_GPIO_WritePin(G1_GPIO_Port,G1_Pin,1);
+			if(timer1_flag == 1){
+				status1 = AUTO_GREEN;
+				setTimer1(timer_green);
+				countdown1=3;
+
+			}
+			break;
+
+		case AUTO_GREEN:
+			HAL_GPIO_WritePin(R1_GPIO_Port,R1_Pin,1);
+			HAL_GPIO_WritePin(Y1_GPIO_Port,Y1_Pin,1);
+			HAL_GPIO_WritePin(G1_GPIO_Port,G1_Pin,0);
+			if(timer1_flag==1){
+				status1 = AUTO_YELLOW;
+				setTimer1(timer_yellow);
+				countdown1=2;
+
+			}
+			break;
+		case AUTO_YELLOW:
+			HAL_GPIO_WritePin(R1_GPIO_Port,R1_Pin,1);
+			HAL_GPIO_WritePin(Y1_GPIO_Port,Y1_Pin,0);
+			HAL_GPIO_WritePin(G1_GPIO_Port,G1_Pin,1);
+			if(timer1_flag == 1){
+				status1 = AUTO_RED;
+				setTimer1(timer_red);
+				countdown1=5;
+
+			}
+			break;
+		default:
+			break;
+		}
+
+		switch(status2){
+		case INIT:
+			HAL_GPIO_WritePin(R2_GPIO_Port,R2_Pin,1);
+			HAL_GPIO_WritePin(Y2_GPIO_Port,Y2_Pin,1);
+			HAL_GPIO_WritePin(G2_GPIO_Port,G2_Pin,1);
+			status2 = AUTO_GREEN;
+			setTimer3(timer_green);
+			countdown2=3;
+
+			break;
+		case AUTO_RED:
+
+
+			HAL_GPIO_WritePin(R2_GPIO_Port,R2_Pin,0);
+			HAL_GPIO_WritePin(Y2_GPIO_Port,Y2_Pin,1);
+			HAL_GPIO_WritePin(G2_GPIO_Port,G2_Pin,1);
+			if(timer3_flag == 1){
+				status2 = AUTO_GREEN;
+				setTimer3(timer_green);
+				countdown2=3;
+
+			}
+			break;
+
+		case AUTO_GREEN:
+
+
+			HAL_GPIO_WritePin(R2_GPIO_Port,R2_Pin,1);
+			HAL_GPIO_WritePin(Y2_GPIO_Port,Y2_Pin,1);
+			HAL_GPIO_WritePin(G2_GPIO_Port,G2_Pin,0);
+			if(timer3_flag==1){
+				status2 = AUTO_YELLOW;
+				setTimer3(timer_yellow);
+				countdown2=2;
+
+			}
+			break;
+		case AUTO_YELLOW:
+
+			HAL_GPIO_WritePin(R2_GPIO_Port,R2_Pin,1);
+			HAL_GPIO_WritePin(Y2_GPIO_Port,Y2_Pin,0);
+			HAL_GPIO_WritePin(G2_GPIO_Port,G2_Pin,1);
+			if(timer3_flag == 1){
+				status2 = AUTO_RED;
+				setTimer3(timer_red);
+				countdown2=5;
+
+			}
+			break;
+		default:
+			break;
+		}
+
+
+
+	}
+

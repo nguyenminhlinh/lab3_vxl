@@ -1,0 +1,14 @@
+/*
+ * display.h
+ *
+ *  Created on: Nov 7, 2022
+ *      Author: minhl
+ */
+
+#ifndef INC_DISPLAY_H_
+#define INC_DISPLAY_H_
+
+#define EN0	0
+#define EN1	1
+
+#endif /* INC_DISPLAY_H_ */

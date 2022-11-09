@@ -1,0 +1,14 @@
+00:08:22 **** Incremental Build of configuration Debug for project Lab03 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/display_7_SEG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/display_7_SEG.d" -MT"Core/Src/display_7_SEG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/display_7_SEG.o"
+../Core/Src/display_7_SEG.c: In function 'display_7SEG_automatic':
+../Core/Src/display_7_SEG.c:72:16: error: 'countdown2' undeclared (first use in this function); did you mean 'countdown1'?
+   72 |   display7SEG1(countdown2 / 10);
+      |                ^~~~~~~~~~
+      |                countdown1
+../Core/Src/display_7_SEG.c:72:16: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:52: Core/Src/display_7_SEG.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+00:08:22 Build Failed. 2 errors, 0 warnings. (took 346ms)
+
